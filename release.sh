@@ -29,12 +29,15 @@ branch="$(git rev-parse --abbrev-ref HEAD)"
 
 git add .
 
-if git diff --cached --quiet; then
-  echo "No hay cambios para publicar (nada agregado desde $current)."
+if ! git diff --cached --quiet; then
+  git commit -m "release $version"
+fi
+
+if git rev-parse -q --verify "refs/tags/$current" >/dev/null && [ "$(git rev-parse "$current")" = "$(git rev-parse HEAD)" ]; then
+  echo "No hay cambios para publicar (nada nuevo desde $current)."
   exit 1
 fi
 
-git commit -m "release $version"
 git push origin "$branch"
 git tag "$version"
 git push origin "$version"
