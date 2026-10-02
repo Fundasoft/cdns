@@ -1,6 +1,11 @@
 # cdns: carpetas de build/verificación local para extraer un cdn (no se trackean)
 /codemirror/
 /fast-xml-parser/
+/fuse/
+/pdfjs-dist/
+/pdf-lib/
+/acorn/
+/svelte-compiler/
 
 # cdns: docs locales, no se trackean en este repo (es puro output de cdns)
 *.md
@@ -200,6 +205,3 @@ dist
 
 # TernJS port file
 .tern-port
-
-# cdns: excepción al *.sh genérico de arriba — este script sí se trackea
-!/release.sh
