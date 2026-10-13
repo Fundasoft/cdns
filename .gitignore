@@ -7,6 +7,8 @@
 /acorn/
 /svelte-compiler/
 
+constantes.cdns.js
+
 # cdns: docs locales, no se trackean en este repo (es puro output de cdns)
 *.md
 
